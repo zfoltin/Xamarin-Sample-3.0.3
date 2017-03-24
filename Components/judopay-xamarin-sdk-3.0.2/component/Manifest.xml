@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="judopay-xamarin-sdk">
+  <name>Judopay Xamarin SDK</name>
+  <publisher>Judopay</publisher>
+  <publisher-url>http://www.judopay.com</publisher-url>
+  <version>3.0.2</version>
+  <summary>Judopay SDK for Xamarin</summary>
+  <packages>
+    <package id="FluentValidation" version="6.2.1.0" framework="mobile" />
+    <package id="Newtonsoft.Json" version="10.0.1" framework="mobile" />
+    <package id="Serilog" version="2.4.0" framework="mobile" />
+    <package id="modernhttpclient" version="2.4.2" framework="mobile" />
+    <package id="Xamarin.Forms" version="2.3.3.193" framework="mobile" />
+    <package id="Xam.Plugin.Connectivity" version="2.3.0" framework="mobile" />
+  </packages>
+  <screenshots>
+    <img src="screenshots/judo-xamarin_740x400.png" title="judo-xamarin_740x400" />
+  </screenshots>
+  <samples>
+    <sample id="samples">
+      <name>Android Sample</name>
+      <summary>Android Sample</summary>
+    </sample>
+    <sample id="samples">
+      <name>iOS Sample</name>
+      <summary>iOS Sample</summary>
+    </sample>
+  </samples>
+</component>
