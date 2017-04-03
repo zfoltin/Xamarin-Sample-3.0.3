@@ -18,15 +18,15 @@ namespace FormsApp
 				Environment = JudoEnvironment.Sandbox,
 				Amount = 1.50m,
 				Currency = "GBP",
-				ConsumerReference = "<CONSUMER_REFERENCE>"
+				ConsumerReference = "2345678654324506"
 			};
 
-			var paymentPage = new PaymentPage(judo);
-			Navigation.PushAsync(paymentPage);
+			var registerCardPage = new RegisterCardPage(judo);
+			Navigation.PushAsync(registerCardPage);
 
-			paymentPage.resultHandler += async (sender, result) =>
+			registerCardPage.resultHandler += async (sender, result) =>
 			{
-				if ("Success".Equals(result.Response.Result))
+				if (result != null && result.Response != null && "Success".Equals(result.Response.Result))
 				{
 					await Navigation.PopAsync();
 				}
