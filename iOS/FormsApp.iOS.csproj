@@ -101,18 +101,6 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="DeviceDNA.iOS">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\ios-unified\DeviceDNA.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="JudoDotNetXamarin">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\ios-unified\JudoDotNetXamarin.dll</HintPath>
-    </Reference>
-    <Reference Include="JudoDotNetXamariniOSSDK">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\ios-unified\JudoDotNetXamariniOSSDK.dll</HintPath>
-    </Reference>
-    <Reference Include="JudoPayDotNet">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\ios-unified\JudoPayDotNet.dll</HintPath>
-    </Reference>
     <Reference Include="FluentValidation">
       <HintPath>..\packages\FluentValidation.6.2.1.0\lib\portable-net45+wp80+win8+wpa81\FluentValidation.dll</HintPath>
     </Reference>
@@ -131,6 +119,15 @@
     </Reference>
     <Reference Include="Plugin.Connectivity">
       <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="JudoDotNetXamariniOSSDK">
+      <HintPath>..\lib\JudoDotNetXamariniOSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="JudoDotNetXamarin">
+      <HintPath>..\lib\JudoDotNetXamarin.dll</HintPath>
+    </Reference>
+    <Reference Include="DeviceDNA.iOS">
+      <HintPath>..\lib\DeviceDNA.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -157,12 +154,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="judopay-xamarin-sdk">
-      <Version>3.0.2</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

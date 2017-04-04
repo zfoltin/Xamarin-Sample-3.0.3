@@ -53,8 +53,8 @@
     <Reference Include="JudoPayDotNet">
       <HintPath>..\lib\JudoPayDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="judopay-xamarin-sdk-3.0">
-      <HintPath>..\lib\judopay-xamarin-sdk-3.0.dll</HintPath>
+    <Reference Include="JudoDotNetXamarin">
+      <HintPath>..\lib\JudoDotNetXamarin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

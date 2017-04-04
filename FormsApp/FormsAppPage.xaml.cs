@@ -12,9 +12,9 @@ namespace FormsApp
 
 			var judo = new Judo()
 			{
+				Token = "<TOKEN>",
+				Secret = "<SECRET>",
 				JudoId = "<JUDO_ID>",
-				ApiToken = "<TOKEN>",
-				ApiSecret = "<SECRET>",
 				Environment = JudoEnvironment.Sandbox,
 				Amount = 1.50m,
 				Currency = "GBP",

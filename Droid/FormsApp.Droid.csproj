@@ -63,18 +63,6 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="DeviceDNA.Android">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\android\DeviceDNA.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="JudoDotNetXamarin">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\android\JudoDotNetXamarin.dll</HintPath>
-    </Reference>
-    <Reference Include="JudoDotNetXamarinAndroidSDK">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\android\JudoDotNetXamarinAndroidSDK.dll</HintPath>
-    </Reference>
-    <Reference Include="JudoPayDotNet">
-      <HintPath>..\Components\judopay-xamarin-sdk-3.0.2\lib\android\JudoPayDotNet.dll</HintPath>
-    </Reference>
     <Reference Include="FluentValidation">
       <HintPath>..\packages\FluentValidation.6.2.1.0\lib\portable-net45+wp80+win8+wpa81\FluentValidation.dll</HintPath>
     </Reference>
@@ -158,6 +146,15 @@
     <Reference Include="Xamarin.GooglePlayServices.Wallet">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Wallet.42.1001.0\lib\MonoAndroid70\Xamarin.GooglePlayServices.Wallet.dll</HintPath>
     </Reference>
+    <Reference Include="JudoDotNetXamarin">
+      <HintPath>..\lib\JudoDotNetXamarin.dll</HintPath>
+    </Reference>
+    <Reference Include="JudoDotNetXamarinAndroidSDK">
+      <HintPath>..\lib\JudoDotNetXamarinAndroidSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="DeviceDNA.Android">
+      <HintPath>..\lib\DeviceDNA.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FormsApp\FormsApp.csproj">
@@ -184,12 +181,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="judopay-xamarin-sdk">
-      <Version>3.0.2</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
