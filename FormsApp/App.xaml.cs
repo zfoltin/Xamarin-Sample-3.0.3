@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace FormsApp
 {
@@ -6,12 +7,19 @@ namespace FormsApp
 	{
 		public App()
 		{
+
+            TaskScheduler.UnobservedTaskException += (sender, args) =>
+            {
+                int i = 0;
+                string exception = args.Exception.StackTrace;
+            };
+
 			InitializeComponent();
 
 			MainPage = new NavigationPage(new FormsAppPage());
 		}
 
-		protected override void OnStart()
+        protected override void OnStart()
 		{
 			// Handle when your app starts
 		}
