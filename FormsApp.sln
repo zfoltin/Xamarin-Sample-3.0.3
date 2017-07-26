@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApp.iOS", "iOS\FormsAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApp.Droid", "Droid\FormsApp.Droid.csproj", "{CD01A7FF-FE8D-4189-8581-916C26101E36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JudoXamarin", "..\Judo-Xamarin-master\src\JudoDotNetXamarin\JudoXamarin.csproj", "{5B807A92-C93B-41E2-A48C-B94D61363EFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JudoXamarin", "JudoDotNetXamarin\JudoXamarin.csproj", "{5B807A92-C93B-41E2-A48C-B94D61363EFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
