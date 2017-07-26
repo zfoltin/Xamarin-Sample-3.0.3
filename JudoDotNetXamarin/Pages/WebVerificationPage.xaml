@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JudoDotNetXamarin.WebVerificationPage" xmlns:local="clr-namespace:JudoDotNetXamarin;assembly=JudoDotNetXamarin">
+	<ContentPage.Content>
+		<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<StackLayout Orientation="Vertical" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+				<local:CardVerificationWebView x:Name="webView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+			</StackLayout>
+			<AbsoluteLayout x:Name="loadingOverlay" IsVisible="false" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<AbsoluteLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9" BackgroundColor="White" />
+				<StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalOptions="Center" HorizontalOptions="Center">
+					<Label x:Name="loadingText" VerticalOptions="Center" HorizontalOptions="Center" />
+					<ActivityIndicator x:Name="loadingIndicator" IsRunning="true" />
+				</StackLayout>
+			</AbsoluteLayout>
+		</AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

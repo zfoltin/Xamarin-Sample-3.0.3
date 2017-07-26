@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B807A92-C93B-41E2-A48C-B94D61363EFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JudoDotNetXamarin</RootNamespace>
+    <AssemblyName>JudoDotNetXamarin</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\XamarinLoggerFactory.cs" />
+    <Compile Include="ViewModels\CardViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViewModel.cs" />
+    <Compile Include="ViewModels\TokenPaymentViewModel.cs" />
+    <Compile Include="Models\JudoError.cs" />
+    <Compile Include="ViewModels\BasePaymentViewModel.cs" />
+    <Compile Include="Delegates\JudoFailureCallback.cs" />
+    <Compile Include="Delegates\JudoSuccessCallback.cs" />
+    <Compile Include="Models\ClientDetails.cs" />
+    <Compile Include="Services\IPaymentService.cs" />
+    <Compile Include="Services\PaymentService.cs" />
+    <Compile Include="Services\IClientService.cs" />
+    <Compile Include="Http\IHttpClientHelper.cs" />
+    <Compile Include="Http\NativeHandler.cs" />
+    <Compile Include="Validation\CardNetworkDiscoverer.cs" />
+    <Compile Include="Validation\Validators\IValidator.cs" />
+    <Compile Include="Validation\Validators\ValidationResponse.cs" />
+    <Compile Include="Validation\Validators\CardNumberValidator.cs" />
+    <Compile Include="Validation\Validators\ExpiryDateValidator.cs" />
+    <Compile Include="Validation\Validators\StartDateValidator.cs" />
+    <Compile Include="Validation\Validators\IssuenNumberValidator.cs" />
+    <Compile Include="Validation\Validators\PostcodeValidator.cs" />
+    <Compile Include="Validation\Validators\SecurityCodeValidator.cs" />
+    <Compile Include="Validation\Validators\ValidatorBase.cs" />
+    <Compile Include="Pages\RegisterCardPage.cs" />
+    <Compile Include="Pages\CardEntryPage.xaml.cs">
+      <DependentUpon>CardEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PaymentPage.cs" />
+    <Compile Include="Pages\TransactionView.cs" />
+    <Compile Include="Pages\TransactionPresenter.cs" />
+    <Compile Include="Countries\ICountry.cs" />
+    <Compile Include="Countries\UKCountry.cs" />
+    <Compile Include="Countries\CanadaCountry.cs" />
+    <Compile Include="Countries\USACountry.cs" />
+    <Compile Include="Countries\OtherCountry.cs" />
+    <Compile Include="Countries\Country.cs" />
+    <Compile Include="Validation\CountryDiscoverer.cs" />
+    <Compile Include="Currencies\ICurrency.cs" />
+    <Compile Include="Currencies\BritishPoundCurrency.cs" />
+    <Compile Include="Currencies\USDollarCurrency.cs" />
+    <Compile Include="Currencies\CanadianDollar.cs" />
+    <Compile Include="Currencies\UnknownCurrency.cs" />
+    <Compile Include="Pages\TokenPaymentPage.cs" />
+    <Compile Include="Pages\WebVerificationPage.xaml.cs">
+      <DependentUpon>WebVerificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JudoEntry.cs" />
+    <Compile Include="Views\WebViewListener.cs" />
+    <Compile Include="Views\CardVerificationRequest.cs" />
+    <Compile Include="Views\CardVerificationResult.cs" />
+    <Compile Include="Views\CardVerificationWebView.cs" />
+    <Compile Include="Models\Judo.cs" />
+    <Compile Include="Models\Theme.cs" />
+    <Compile Include="Pages\PreAuthPage.cs" />
+    <Compile Include="Services\IApplePayService.cs" />
+    <Compile Include="ViewModels\PKPaymentViewModel.cs" />
+    <Compile Include="Views\KeyboardAwarePage.cs" />
+    <Compile Include="Error\TokenSecretException.cs" />
+    <Compile Include="Util\Luhn.cs" />
+    <Compile Include="Models\DefaultTheme.cs" />
+    <Compile Include="ViewModels\PaymentDefaultsViewModel.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="ViewModels\TokenPaymentDefaultsViewModel.cs" />
+    <Compile Include="Pages\TokenPreAuthPage.cs" />
+    <Compile Include="Views\JudoPicker.cs" />
+    <Compile Include="Models\ApplePay\ApplePayCardNetwork.cs" />
+    <Compile Include="Models\ApplePay\ApplePayItem.cs" />
+    <Compile Include="Models\ApplePay\ApplePayModel.cs" />
+    <Compile Include="CardNetworks\AmexCardNetwork.cs" />
+    <Compile Include="CardNetworks\CardNetwork.cs" />
+    <Compile Include="CardNetworks\CardNetworkBase.cs" />
+    <Compile Include="CardNetworks\CardPart.cs" />
+    <Compile Include="CardNetworks\DisplayNameAttribute.cs" />
+    <Compile Include="CardNetworks\ICardNetwork.cs" />
+    <Compile Include="CardNetworks\MaestroCardNetwork.cs" />
+    <Compile Include="CardNetworks\MastercardCardNetwork.cs" />
+    <Compile Include="CardNetworks\UnknownCardNetwork.cs" />
+    <Compile Include="CardNetworks\VisaCardNetwork.cs" />
+    <Compile Include="Services\EntryAutoAdvancer.cs" />
+    <Compile Include="Services\IEntryAutoAdvancer.cs" />
+    <Compile Include="Views\JudoButton.cs" />
+    <Compile Include="Services\ServiceContainer.cs" />
+    <Compile Include="Factories\JudoPaymentsFactory.cs" />
+    <Compile Include="Services\INetworkDetector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Currencies\EuroCurrency.cs" />
+    <Compile Include="Extensions\ThemeExtensions.cs" />
+    <Compile Include="Models\EntrySession.cs" />
+    <Compile Include="Services\EntrySessionEventHandler.cs" />
+    <Compile Include="Models\EntrySessionState.cs" />
+    <Compile Include="Services\IApplicationEvents.cs" />
+    <Compile Include="Services\ApplicationEvents.cs" />
+    <Compile Include="Views\EntryExporter.cs" />
+    <Compile Include="Factories\CardPaymentModelFactory.cs" />
+    <Compile Include="Factories\TokenPaymentModelFactory.cs" />
+    <Compile Include="Factories\PKPaymentModelFactory.cs" />
+    <Compile Include="Factories\BasePaymentModelFactory.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.1.0\lib\netstandard1.0\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JudoPayDotNet">
+      <HintPath>..\lib\JudoPayDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.1\lib\netstandard1.0\Plugin.Connectivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.1\lib\netstandard1.0\Plugin.Connectivity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.5.0\lib\netstandard1.0\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\WebVerificationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CardEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\..\samples\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\samples\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>

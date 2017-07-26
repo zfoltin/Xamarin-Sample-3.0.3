@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:KeyboardAwarePage x:Name="contentPage" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JudoDotNetXamarin.CardEntryPage" xmlns:local="clr-namespace:JudoDotNetXamarin;assembly=JudoDotNetXamarin">
+	<ContentPage.Content>
+		<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<AbsoluteLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Padding="0,0,0,60">
+					<StackLayout>
+						<Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="5,15,5,0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<local:JudoEntry x:Name="cardNumberEntry" AutomationId="cardNumberEntry" Placeholder="Card number" Digits="0123456789 " Format="0000 0000 0000 0000" MaxLength="19" Keyboard="Numeric" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Opacity="0.5">
+								<local:JudoEntry.Triggers>
+									<DataTrigger TargetType="local:JudoEntry" Binding="{Binding Source={x:Reference cardNumberEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</local:JudoEntry.Triggers>
+							</local:JudoEntry>
+							<Image x:Name="cardImage" Source="ic_card_unknown.png" Grid.Row="0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Margin="5" Opacity="0.5">
+								<Image.Triggers>
+									<DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference cardNumberEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</Image.Triggers>
+								<Image.HeightRequest>
+         							<OnPlatform x:TypeArguments="x:Double" iOS="31" Android="31" />
+        						</Image.HeightRequest>
+								<Image.WidthRequest>
+         							<OnPlatform x:TypeArguments="x:Double" iOS="46" Android="46" />
+        						</Image.WidthRequest>
+							</Image>
+						</Grid>
+						<Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<local:JudoEntry x:Name="startDateEntry" AutomationId="startDateEntry" IsVisible="false" Placeholder="Start date" Format="00/00" MaxLength="5" Digits="0123456789/" Keyboard="Numeric" Grid.Row="0" Grid.Column="0" Opacity="0.5">
+								<local:JudoEntry.Triggers>
+									<DataTrigger TargetType="local:JudoEntry" Binding="{Binding Source={x:Reference startDateEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</local:JudoEntry.Triggers>
+							</local:JudoEntry>
+							<local:JudoEntry x:Name="issueNumberEntry" AutomationId="issueNumberEntry" IsVisible="false" MaxLength="2" Placeholder="Issue number" Keyboard="Numeric" Grid.Row="0" Grid.Column="1" Opacity="0.5" >
+								<local:JudoEntry.Triggers>
+									<DataTrigger TargetType="local:JudoEntry" Binding="{Binding Source={x:Reference issueNumberEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</local:JudoEntry.Triggers>
+							</local:JudoEntry>
+						</Grid>
+						<Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<local:JudoEntry x:Name="expiryDateEntry" AutomationId="expiryDateEntry" Placeholder="Expiry date" Format="00/00" MaxLength="5" Digits="0123456789/" Keyboard="Numeric" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="0" Opacity="0.5">
+								<local:JudoEntry.Triggers>
+									<DataTrigger TargetType="local:JudoEntry" Binding="{Binding Source={x:Reference expiryDateEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</local:JudoEntry.Triggers>
+							</local:JudoEntry>
+							<local:JudoEntry x:Name="cvvEntry" AutomationId="cvvEntry" Placeholder="CVV" Digits="0123456789" Keyboard="Numeric" MaxLength="3" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Opacity="0.5">
+								<local:JudoEntry.Triggers>
+									<DataTrigger TargetType="local:JudoEntry" Binding="{Binding Source={x:Reference cvvEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</local:JudoEntry.Triggers>
+							</local:JudoEntry>
+							<Image x:Name="cvvImage" Source="ic_card_cv2.png" Grid.Row="0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Margin="5" Opacity="0.5">
+								<Image.Triggers>
+									<DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference cvvEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</Image.Triggers>
+								<Image.HeightRequest>
+         							<OnPlatform x:TypeArguments="x:Double" iOS="31" Android="31" />
+        						</Image.HeightRequest>
+								<Image.WidthRequest>
+         							<OnPlatform x:TypeArguments="x:Double" iOS="46" Android="46" />
+        						</Image.WidthRequest>
+							</Image>
+						</Grid>
+						<Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+								<local:JudoPicker Grid.Row="0" Grid.Column="0" Label="Billing country" x:Name="countryPicker" AutomationId="countryPicker" IsVisible="false"/>
+							<local:JudoEntry x:Name="postcodeEntry" AutomationId="postcodeEntry" Placeholder="Billing postcode" Digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ" IsUpperCase="true" IsVisible="false" MaxLength="7" Grid.Row="0" Grid.Column="1" Opacity="0.5">
+								<local:JudoEntry.Triggers>
+									<DataTrigger TargetType="local:JudoEntry" Binding="{Binding Source={x:Reference postcodeEntry}, Path=ShouldImageOpacityBeApplied}" Value="True">
+										<Setter Property="Opacity" Value="1" />
+									</DataTrigger>
+								</local:JudoEntry.Triggers>
+							</local:JudoEntry>
+						</Grid>
+						<Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="10,0,5,0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Label x:Name="securityLabel" LineBreakMode="WordWrap">
+								<Label.FormattedText>
+									<FormattedString>
+										<Span Font="12" FontAttributes="Bold" Text="Secure server: ">
+										</Span>
+										<Span Font="12" Text="Your card details are encrypted using SSL before transmission to our secure payment service provider. They will not be stored on this device or on our servers.">
+										</Span>
+									</FormattedString>
+								</Label.FormattedText>
+							</Label>
+						</Grid>
+					</StackLayout>
+				</ScrollView>
+				<local:JudoButton x:Name="payButton" BackgroundColor="#48B6AC" TextColor="White" FontSize="20" FontAttributes="Bold" IsVisible="false" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalOptions="End" HorizontalOptions="Fill" />
+			</AbsoluteLayout>
+			<AbsoluteLayout x:Name="loadingOverlay" IsVisible="false" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<AbsoluteLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.7" BackgroundColor="White" />
+				<StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalOptions="Center" HorizontalOptions="Center">
+					<Label x:Name="loadingOverlayTitleLabel" Text="Processing payment" VerticalOptions="Center" HorizontalOptions="Center" />
+					<ActivityIndicator x:Name="loadingIndicator" IsRunning="true" />
+				</StackLayout>
+			</AbsoluteLayout>
+		</AbsoluteLayout>
+	</ContentPage.Content>
+</local:KeyboardAwarePage>
